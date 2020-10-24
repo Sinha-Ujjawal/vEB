@@ -145,6 +145,8 @@ class Set:
 				c = Set.__predecessor(V.summary, c, new_u, threshold)
 				if c != None:
 					return Set.__indexOf(c, V.cluster[c].max, new_u)
+			if x > V.min:
+				return V.min
 		else:
 			index = V.list.bisect_left(x)
 			return V.list[index - 1] if index else None
